@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './register-page.component.css'
 })
 export class RegisterPageComponent {
-
+public hide:boolean=true;
 }
