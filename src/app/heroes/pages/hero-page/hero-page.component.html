@@ -1,1 +1,47 @@
-<p>hero-page works!</p>
+<ng-template #divLoading >
+<div class="flex h-30rem align-items-center justify-content-center h-4rem bg-primary font-bold border-round m-2">
+  
+        <div class="spinner"></div>
+    
+      
+</div>
+
+      
+
+</ng-template>
+<!-- <div class="grid mt-2 p-2" *ngIf="hero; else divLoading">
+    <mat-card class="col-12 sm:col-6">
+        <mat-card-header>
+            <mat-card-title>{{hero.alter_ego}}</mat-card-title>
+            <mat-card-subtitle>{{hero.superhero}}</mat-card-subtitle>
+          
+        </mat-card-header>
+        <img [src]="hero | heroImage" [alt]="hero.superhero" matCardImage >
+    </mat-card>
+
+</div> -->
+
+<div class="hero-container" *ngIf="hero; else divLoading">
+    <div class="hero-card-full">
+      <img [src]="hero | heroImage" [alt]="hero.superhero" class="hero-image-full">
+      
+      <div class="hero-details">
+        <h1 class="hero-title">{{ hero.superhero }}</h1>
+        <h2 class="hero-subtitle">{{ hero.alter_ego }}</h2>
+        
+        <mat-chip-listbox class="hero-chips">
+          <mat-chip *ngFor="let name of hero.characters.split(',')">{{ name }}</mat-chip>
+        </mat-chip-listbox>
+        
+        <p class="hero-description">
+          Primera aparición: {{ hero.first_appearance }}
+        </p>
+  
+        <div class="hero-card-actions">
+          
+          <button class="hero-btn accent" (click)="goBack()">Regresar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

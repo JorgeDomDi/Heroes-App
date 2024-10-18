@@ -1,0 +1,171 @@
+.spinner { 
+    width: 100px; /* Tamaño del spinner */
+    height: 100px;
+    border-radius: 50%; /* Forma circular */
+    background: conic-gradient(#f7d307, #ffffff); /* Gradiente circular */
+    position: relative;
+    animation: spin 1.2s infinite linear; /* Animación de giro */
+    box-shadow: 0 0 10px rgba(155, 140, 3, 0.6); /* Sombra para efecto de profundidad */
+  }
+  
+  /* Agrandamos el hueco interno para engrosar la línea */
+  .spinner::before {
+    content: '';
+    position: absolute;
+    top: 10px; /* Ajustamos el hueco */
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background-color: rgb(255, 255, 255); /* Color del hueco central */
+    border-radius: 50%;
+  }
+  
+  /* Animación de giro más fluida */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  
+/* Contenedor principal */
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupar toda la pantalla */
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+.hero-card-full {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card-full:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen a la izquierda (diseño de escritorio) */
+.hero-image-full {
+  width: 40%;
+  object-fit: cover;
+  height: 100%;
+  background-color: #e0e0e0;
+}
+
+/* Detalles a la derecha */
+.hero-details {
+  width: 60%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #3f51b5;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 24px;
+  font-weight: 300;
+  color: #757575;
+  margin-top: 10px;
+}
+
+.hero-chips {
+  margin-top: 15px;
+}
+
+mat-chip {
+  margin-right: 10px;
+  background-color: #e0e0e0;
+  color: #424242;
+  font-size: 14px;
+  border-radius: 16px;
+  padding: 5px 10px;
+}
+
+.hero-description {
+  font-size: 18px;
+  color: #616161;
+  line-height: 1.6;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+.hero-card-actions {
+  margin-top: 30px;
+  display: flex;
+  gap: 16px;
+}
+
+.hero-btn {
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #2c387e;
+}
+
+.hero-btn.accent {
+  background-color: #ff4081;
+}
+
+.hero-btn.accent:hover {
+  background-color: #e91e63;
+}
+
+/* Responsividad para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .hero-card-full {
+    flex-direction: column; /* Cambia la disposición a vertical */
+  }
+
+  .hero-image-full {
+    width: 100%; /* Imagen ocupa todo el ancho en móvil */
+    height: 40vh; /* Imagen ocupa el 40% del alto de la pantalla */
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .hero-details {
+    width: 100%; /* Los detalles también ocupan todo el ancho */
+    padding: 20px; /* Menor espaciado en móviles */
+  }
+
+  .hero-title {
+    font-size: 28px; /* Tamaño de fuente más pequeño para pantallas móviles */
+  }
+
+  .hero-subtitle {
+    font-size: 20px; /* Ajuste de subtítulo */
+  }
+
+  .hero-description {
+    font-size: 16px; /* Texto más pequeño en móviles */
+  }
+}
