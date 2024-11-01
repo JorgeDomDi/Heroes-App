@@ -1,5 +1,5 @@
 export interface Hero {
-    alt_image: string;
+    alt_image:        string;
     id:               string;
     superhero:        string;
     publisher:        Publisher;

@@ -7,8 +7,8 @@ import { Hero } from '../interfaces/hero.interface';
 export class HeroImagePipe implements PipeTransform {
 
   transform(hero: Hero, ...args: unknown[]): string {
-    if(!hero.id && !hero.alt_image){
-   return `assets/no-image.jpg`
+    if(! hero.id && !hero.alt_image ){
+   return `assets/no-image.png`
   
   
     }
